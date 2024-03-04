@@ -109,9 +109,9 @@ Users with the role 'user' have access to CRUD operations for categories and pro
 Users with the role 'admin' have access to all CRUD operations.
 
 #Clone this repository
-git clone https://github.com/ptrjs/inventory-system-api.git
+git clone https://github.com/ptrjs/inventory-system.git
 
-cd inventory-system-api
+cd inventory-system
 
 #Installation
 npm install
