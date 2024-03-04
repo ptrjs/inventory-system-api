@@ -81,9 +81,11 @@ To install and run the API locally, follow these steps:
 
 3. Create a `.env` file with the following configuration:
     ```env
-    PORT=3000
+    PORT=port-number
     DATABASE_URL="your-db-url"
-    SECRET_KEY="your-secret-key"
+    JWT_SECRET="your-secret-key"
+    JWT_ACCESS_EXPIRATION_MINUTES=expire-minute
+    JWT_REFRESH_EXPIRATION_DAYS=expire-day
     ```
 
 4. Run the API:
