@@ -12,7 +12,7 @@ const swaggerOptions = {
       },    
       servers: [
         {
-          url: "http://localhost:3000/v1",
+          url: "https://inventory-system-p75j.onrender.com/v1",
         },
       ],
       
