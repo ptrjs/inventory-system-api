@@ -1,7 +1,8 @@
-# Inventory System API
+# Inventory System App
 
-Welcome to the Inventory System API documentation! This API allows you to manage categories, products, orders, order items, and users within your inventory system.
+Welcome to the Inventory System Apps documentation! This App allows you to manage categories, products, orders, order items, and users within your inventory system.
 
+# API 
 ## Authentication
 
 To access the endpoints, you need to authenticate using the following endpoints:
