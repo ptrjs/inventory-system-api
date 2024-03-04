@@ -1,6 +1,6 @@
 Inventory System API Documentation
 
-#Authentication
+##Authentication
 POST /auth/register
 Registers a new user.
 
