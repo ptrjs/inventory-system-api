@@ -1,6 +1,7 @@
 # Inventory System App
 
 Welcome to the Inventory System Apps documentation! This App allows you to manage categories, products, orders, order items, and users within your inventory system.
+<b>Demo Web App</b>
 [https://inventory-system-p75j.onrender.com/]
 
 <b>API docs</b>
