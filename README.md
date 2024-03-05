@@ -4,11 +4,12 @@ Welcome to the Inventory System Apps documentation! This App allows you to manag
 <br>
 <b>Demo Web App</b>
 <br>
-[https://inventory-system-p75j.onrender.com/]
+https://inventory-system-p75j.onrender.com/
+<br>
 <br>
 <b>API docs</b>
 <br>
-[https://inventory-system-p75j.onrender.com/v1/api-docs]
+https://inventory-system-p75j.onrender.com/v1/api-docs
 
 # Technology
 - Backend: ExpressJS
