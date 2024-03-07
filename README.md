@@ -109,3 +109,27 @@ To install and run the API locally, follow these steps:
     ```
 
 Feel free to explore the API and manage your inventory efficiently!
+
+# Screenshot
+## Web App
+![image](https://github.com/ptrjs/inventory-system/assets/34370936/f3fa159c-f87d-4d82-b6d0-160613c2295a)
+<br>
+![image](https://github.com/ptrjs/inventory-system/assets/34370936/ab95196e-1e47-43c9-81d5-76aedefe12a1)
+<br>
+![image](https://github.com/ptrjs/inventory-system/assets/34370936/3ccaab66-7387-48dd-a441-12c19cda9a7b)
+<br>
+![image](https://github.com/ptrjs/inventory-system/assets/34370936/ba2130b4-ac27-4dd9-9a29-8b259b22eddd)
+<br>
+![image](https://github.com/ptrjs/inventory-system/assets/34370936/3812b34f-e3c8-40b4-85fc-a630d264f450)
+<br>
+<br>
+## API Docs
+![image](https://github.com/ptrjs/inventory-system/assets/34370936/49ca6e71-7bcd-405d-a725-23e58e5aea9d)
+<br>
+![image](https://github.com/ptrjs/inventory-system/assets/34370936/a08fb0dd-947f-439b-8757-4095ffb2fb4c)
+<br>
+![image](https://github.com/ptrjs/inventory-system/assets/34370936/0184b606-f019-42d1-95b5-81b8958c8c23)
+<br>
+![image](https://github.com/ptrjs/inventory-system/assets/34370936/2addb14d-1dd1-4a19-8df7-b0427b3152a7)
+<br>
+![image](https://github.com/ptrjs/inventory-system/assets/34370936/7e6c12a5-7c48-4d23-a04a-18b8260abe6f)
