@@ -15,6 +15,7 @@ https://inventory-system-p75j.onrender.com/v1/api-docs
 - Backend: ExpressJS
 - Frontend: EJS, HTML, CSS, Bootstrap
 - Database: PostgreSQL + Prisma(ORM)
+- Testing: Jest
 
 # API 
 ## Authentication
