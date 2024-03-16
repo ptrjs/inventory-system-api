@@ -17,6 +17,9 @@ https://inventory-system-p75j.onrender.com/v1/api-docs
 - Database: PostgreSQL + Prisma(ORM)
 - Testing: Jest
 
+# Database Diagram
+<img width="824" alt="erd inventory system" src="https://github.com/ptrjs/inventory-system/assets/34370936/2b98cb07-e33c-410d-90a8-95f5307be205">
+
 # API 
 ## Authentication
 
