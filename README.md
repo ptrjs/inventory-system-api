@@ -2,7 +2,7 @@
 
 Welcome to the Inventory System Apps documentation! This App allows you to manage categories, products, orders, order items, and users within your inventory system.
 
-"Initially, I created this project as a backend in the form of a RESTful API, but for presentation purposes, I ended up converting it into server-side rendering using EJS. Thus, the project now exists in the form of server-side rendering, yet its API remains accessible for retrieving data when needed."
+`Initially, I created this project as a backend in the form of a RESTful API, but for presentation purposes, I ended up converting it into server-side rendering using EJS. Thus, the project now exists in the form of server-side rendering, yet its API remains accessible for retrieving data when needed.`
 
 <br>
 <b>Demo Web App</b>
