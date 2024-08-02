@@ -2,7 +2,7 @@ const { PrismaClient } = require('@prisma/client');
 const { execSync } = require('child_process');
 const { join } = require('path');
 
-global.atob = require('atob');
+
 
 const generateDatabaseURL = () => {
   if (!process.env.DATABASE_URL) {
