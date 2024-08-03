@@ -28,8 +28,8 @@ const { auth } = require('./middlewares/auth');
 const { addTokenToHeader } = require('./middlewares/addTokenToHeader');
 const { tokenTypes } = require('./config/tokens');
 const { checkNotAuthenticate, checkAuthenticate } = require('./middlewares/checkAuth');
+const { createClient } = require('@supabase/supabase-js');
 const app = express();
-
 
 if (config.env !== 'test') {
   app.use(morgan.successHandler);
@@ -68,7 +68,7 @@ app.use(express.static(publicPath));
 app.use(
   flash({
     sessionKeyName: 'express-flash-message',
-   
+
   })
 );
 
@@ -140,7 +140,7 @@ passport.serializeUser(function (user, done) {
 
 passport.deserializeUser(function (id, done) {
   console.log('Deserialize User ID:', id);
-  
+
 	process.nextTick(async function () {
 		try {
       // const existingUser = await prisma.user.findUnique({
@@ -162,7 +162,7 @@ passport.deserializeUser(function (id, done) {
 app.post(
 	'/auth/login',
 	checkNotAuthenticate,
-	passport.authenticate('local', { 
+	passport.authenticate('local', {
       successRedirect: '/',
       failureRedirect: '/auth/login',
       failureFlash: true
