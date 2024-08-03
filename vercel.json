@@ -1,3 +1,15 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.js" }]
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/controllers/index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/src/controllers/index.js"
+    }
+  ]
 }
