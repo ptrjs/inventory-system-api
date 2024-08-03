@@ -14,7 +14,7 @@ const { jwtStrategy } = require('./config/passport');
 const swaggerJsdoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 const swaggerOptions = require('./swaggerOption');
-const prisma = require('../prisma');
+const prisma = require('../prisma/client');
 const bcrypt = require("bcryptjs");
 const { auth } = require('./middlewares/auth');
 
