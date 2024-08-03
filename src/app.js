@@ -6,7 +6,7 @@ const compression = require('compression');
 const cors = require('cors');
 const passport = require('passport');
 const routes = require('./routes/v1');
-const routesWeb = require('./routes');
+//const routesWeb = require('./routes');
 const config = require('./config/config');
 const morgan = require('./config/morgan');
 const { errorConverter, errorHandler } = require('./middlewares/error');
@@ -15,19 +15,19 @@ const { jwtStrategy } = require('./config/passport');
 const swaggerJsdoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 const swaggerOptions = require('./swaggerOption');
-const expressLayout = require('express-ejs-layouts');
-const flash = require('express-flash');
-const session = require('express-session');
-const methodOverride = require('method-override');
-const path = require('path');
-const { userService, authService, tokenService } = require('./services');
+//const expressLayout = require('express-ejs-layouts');
+//const flash = require('express-flash');
+//const session = require('express-session');
+//const methodOverride = require('method-override');
+//const path = require('path');
+//const { userService, authService, tokenService } = require('./services');
 const prisma = require('../prisma');
-const LocalStrategy = require("passport-local").Strategy;
+//const LocalStrategy = require("passport-local").Strategy;
 const bcrypt = require("bcryptjs");
 const { auth } = require('./middlewares/auth');
-const { addTokenToHeader } = require('./middlewares/addTokenToHeader');
-const { tokenTypes } = require('./config/tokens');
-const { checkNotAuthenticate, checkAuthenticate } = require('./middlewares/checkAuth');
+//const { addTokenToHeader } = require('./middlewares/addTokenToHeader');
+//const { tokenTypes } = require('./config/tokens');
+//const { checkNotAuthenticate, checkAuthenticate } = require('./middlewares/checkAuth');
 
 
 const app = express();
@@ -116,151 +116,151 @@ app.use('/v1', routes);
 
 
 /*
-passport.use(
-	new LocalStrategy({
-    usernameField: 'email',
-    passwordField: 'password'
-  }, async function (email, password, done) {
-		try {
+// passport.use(
+// 	new LocalStrategy({
+//     usernameField: 'email',
+//     passwordField: 'password'
+//   }, async function (email, password, done) {
+// 		try {
 
-      const user = await authService.loginUserWithEmailAndPassword(email,password)
-      const tokens = await tokenService.generateAuthTokens(user);
-      // const accessToken = tokens.access.token;
-      // const authorizationHeader = `Bearer ${accessToken}`;
+//       const user = await authService.loginUserWithEmailAndPassword(email,password)
+//       const tokens = await tokenService.generateAuthTokens(user);
+//       // const accessToken = tokens.access.token;
+//       // const authorizationHeader = `Bearer ${accessToken}`;
 
-      // console.log('User:', user);
-      // console.log('Authorization Header:', authorizationHeader);
-      user.tokens = tokens;
-      return done(null, user)
-    } catch (error) {
-			done(error);
-		}
+//       // console.log('User:', user);
+//       // console.log('Authorization Header:', authorizationHeader);
+//       user.tokens = tokens;
+//       return done(null, user)
+//     } catch (error) {
+// 			done(error);
+// 		}
 
-	})
-);
-
-
-passport.serializeUser(function (user, done) {
-  console.log('Serialize User:', user);
-	process.nextTick(function () {
-		return done(null, user.id);
-	});
-});
-
-passport.deserializeUser(function (id, done) {
-  console.log('Deserialize User ID:', id);
-
-	process.nextTick(async function () {
-		try {
-      // const existingUser = await prisma.user.findUnique({
-      //   where:{id},
-      // })
-      const existingUser = await userService.getUserById(id)
-      const tokens = await tokenService.generateAuthTokens(existingUser);
-      existingUser.tokens = tokens;
-			done(null, existingUser);
-		} catch (error) {
-			done(error);
-		}
-	});
-});
+// 	})
+// );
 
 
+// passport.serializeUser(function (user, done) {
+//   console.log('Serialize User:', user);
+// 	process.nextTick(function () {
+// 		return done(null, user.id);
+// 	});
+// });
 
+// passport.deserializeUser(function (id, done) {
+//   console.log('Deserialize User ID:', id);
 
-app.post(
-	'/auth/login',
-	checkNotAuthenticate,
-	passport.authenticate('local', {
-      successRedirect: '/',
-      failureRedirect: '/auth/login',
-      failureFlash: true
-  }),
-
-);
-
-
-
-app.post('/auth/register', async (req, res) => {
-	const { name, email, password, role } = req.body;
-	if (!name) {
-		return res.render("register", {
-			error: "name required",
-			name,
-			email,
-			password,
-		});
-	}
-	if (!email) {
-		return res.render("register", {
-			error: "email required",
-			name,
-			email,
-			password,
-		});
-	}
-	if (!password) {
-		return res.render("register", {
-			error: "password required",
-			name,
-			email,
-			password,
-		});
-	}
-
-	const existingUser = await userService.getUserByEmail(email)
-
-	if (existingUser) {
-		return res.render("register", {
-			error: "email already taken",
-			name,
-			email,
-			password,
-		});
-	}
-
-	//const hashPassword = await bcrypt.hash(password, 8);
-  await userService.createUser(req.body)
-	// await prisma.user.create({
-	// 	data: {
-	// 		name,
-	// 		email,
-	// 		password: hashPassword,
-	// 	},
-	// });
-
-	res.render("register", {
-		success_msg: "Register Succesfully",
-	});
-});
+// 	process.nextTick(async function () {
+// 		try {
+//       // const existingUser = await prisma.user.findUnique({
+//       //   where:{id},
+//       // })
+//       const existingUser = await userService.getUserById(id)
+//       const tokens = await tokenService.generateAuthTokens(existingUser);
+//       existingUser.tokens = tokens;
+// 			done(null, existingUser);
+// 		} catch (error) {
+// 			done(error);
+// 		}
+// 	});
+// });
 
 
 
 
-app.get('/', checkAuthenticate, (req, res) => {
-  // Handler untuk rute root
-  res.render('index', {
-      user: req.user,
-      //accessToken: req.user.tokens.access.token
-  });
-});
+// app.post(
+// 	'/auth/login',
+// 	checkNotAuthenticate,
+// 	passport.authenticate('local', {
+//       successRedirect: '/',
+//       failureRedirect: '/auth/login',
+//       failureFlash: true
+//   }),
 
-
-app.get('/auth/login', checkNotAuthenticate, (req, res) =>{
-  res.render('./auth/login')
-})
-
-
-app.get('/auth/register', checkNotAuthenticate, (req, res) => {
-	res.render("./auth/register");
-});
+// );
 
 
 
-app.get('/auth/logout', (req, res) => {
-  req.logout(); // Hapus sesi pengguna
-  res.redirect('/auth/login'); // Redirect ke halaman login setelah logout
-});
+// app.post('/auth/register', async (req, res) => {
+// 	const { name, email, password, role } = req.body;
+// 	if (!name) {
+// 		return res.render("register", {
+// 			error: "name required",
+// 			name,
+// 			email,
+// 			password,
+// 		});
+// 	}
+// 	if (!email) {
+// 		return res.render("register", {
+// 			error: "email required",
+// 			name,
+// 			email,
+// 			password,
+// 		});
+// 	}
+// 	if (!password) {
+// 		return res.render("register", {
+// 			error: "password required",
+// 			name,
+// 			email,
+// 			password,
+// 		});
+// 	}
+
+// 	const existingUser = await userService.getUserByEmail(email)
+
+// 	if (existingUser) {
+// 		return res.render("register", {
+// 			error: "email already taken",
+// 			name,
+// 			email,
+// 			password,
+// 		});
+// 	}
+
+// 	//const hashPassword = await bcrypt.hash(password, 8);
+//   await userService.createUser(req.body)
+// 	// await prisma.user.create({
+// 	// 	data: {
+// 	// 		name,
+// 	// 		email,
+// 	// 		password: hashPassword,
+// 	// 	},
+// 	// });
+
+// 	res.render("register", {
+// 		success_msg: "Register Succesfully",
+// 	});
+// });
+
+
+
+
+// app.get('/', checkAuthenticate, (req, res) => {
+//   // Handler untuk rute root
+//   res.render('index', {
+//       user: req.user,
+//       //accessToken: req.user.tokens.access.token
+//   });
+// });
+
+
+// app.get('/auth/login', checkNotAuthenticate, (req, res) =>{
+//   res.render('./auth/login')
+// })
+
+
+// app.get('/auth/register', checkNotAuthenticate, (req, res) => {
+// 	res.render("./auth/register");
+// });
+
+
+
+// app.get('/auth/logout', (req, res) => {
+//   req.logout(); // Hapus sesi pengguna
+//   res.redirect('/auth/login'); // Redirect ke halaman login setelah logout
+// });
 */
 const swaggerSpec = swaggerJsdoc(swaggerOptions);
 
