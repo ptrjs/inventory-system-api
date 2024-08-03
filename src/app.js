@@ -57,6 +57,9 @@ app.use(compression());
 app.use(cors());
 app.options('*', cors());
 
+
+
+/*
 app.use(methodOverride('_method'));
 
 //static file
@@ -98,15 +101,20 @@ app.use(passport.initialize());
 app.use(passport.session());
 passport.use('jwt', jwtStrategy);
 
+*/
+
+app.get('/', (req, res) => {
+  res.send('hello world');
+});
 // v1 api routes
 app.use('/v1', routes);
 
 // web routes
-app.use('/', routesWeb);
+// app.use('/', routesWeb);
 
 
 
-
+/*
 passport.use(
 	new LocalStrategy({
     usernameField: 'email',
@@ -252,13 +260,15 @@ app.get('/auth/logout', (req, res) => {
   req.logout(); // Hapus sesi pengguna
   res.redirect('/auth/login'); // Redirect ke halaman login setelah logout
 });
-
+*/
 const swaggerSpec = swaggerJsdoc(swaggerOptions);
 
 app.use('/v1/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 
+/*
 //Handle 404
+
 app.get('*', (req,res)=>{
   res.status(404).render('404');
 })
@@ -270,6 +280,7 @@ app.use((req, res, next) => {
   next(new ApiError(httpStatus.NOT_FOUND, 'Not found'));
 });
 
+*/
 
 
 // convert error jadi Instance API Error jika ada error yang tidak ketangkap
