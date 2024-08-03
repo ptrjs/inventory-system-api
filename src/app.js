@@ -28,7 +28,8 @@ const { auth } = require('./middlewares/auth');
 const { addTokenToHeader } = require('./middlewares/addTokenToHeader');
 const { tokenTypes } = require('./config/tokens');
 const { checkNotAuthenticate, checkAuthenticate } = require('./middlewares/checkAuth');
-const { createClient } = require('@supabase/supabase-js');
+
+
 const app = express();
 
 if (config.env !== 'test') {
@@ -36,6 +37,10 @@ if (config.env !== 'test') {
   app.use(morgan.errorHandler);
 }
 
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use('jwt', jwtStrategy);
 
 
 // set security HTTP headers
@@ -96,10 +101,6 @@ app.use(
     // },
   })
 );
-
-app.use(passport.initialize());
-app.use(passport.session());
-passport.use('jwt', jwtStrategy);
 
 */
 
@@ -275,12 +276,12 @@ app.get('*', (req,res)=>{
 
 
 
+*/
 // send 404 error jika route tidak ada
 app.use((req, res, next) => {
   next(new ApiError(httpStatus.NOT_FOUND, 'Not found'));
 });
 
-*/
 
 
 // convert error jadi Instance API Error jika ada error yang tidak ketangkap
