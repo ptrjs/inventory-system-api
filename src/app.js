@@ -102,7 +102,7 @@ passport.use('jwt', jwtStrategy);
 app.use('/v1', routes);
 
 // web routes
-app.use('/', routesWeb);
+//app.use('/', routesWeb);
 
 
 
